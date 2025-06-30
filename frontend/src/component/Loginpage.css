@@ -1,0 +1,224 @@
+/* Loginpage.css - Enhanced Color Scheme */
+
+/* Base Styles */
+.login-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #2586dc; /* Light azure background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-page-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6e45e2, #89d4cf); /* Purple to teal gradient */
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.login-page-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login Card - Enhanced with Glass Morphism */
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease-out;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-title {
+  color: #5c6bc0; /* Indigo */
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.login-subtitle {
+  color: #757575;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Form Styles - Enhanced */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.login-input {
+  padding: 16px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #5c6bc0;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(92, 107, 192, 0.2);
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5c6bc0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.password-toggle:hover {
+  color: #3949ab;
+  background-color: rgba(92, 107, 192, 0.1);
+}
+
+/* Button Styles - Enhanced */
+.login-submit-btn {
+  background: linear-gradient(135deg, #5c6bc0, #3949ab); /* Indigo gradient */
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(92, 107, 192, 0.3);
+}
+
+.login-submit-btn:hover {
+  background: linear-gradient(135deg, #3949ab, #283593);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(92, 107, 192, 0.4);
+}
+
+.login-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(92, 107, 192, 0.4);
+}
+
+/* Error Message - Enhanced */
+.login-error-message {
+  color: #d32f2f;
+  background-color: rgba(211, 47, 47, 0.1);
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 4px solid #d32f2f;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* Additional Decorative Elements */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(135deg, rgba(110, 69, 226, 0.1), rgba(137, 212, 207, 0.1));
+  z-index: -1;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 12px;
+  }
+  
+  .login-title {
+    font-size: 24px;
+  }
+  
+  .login-input {
+    padding: 14px 16px;
+  }
+  
+  .login-submit-btn {
+    padding: 14px;
+  }
+}
+
+/* Loading State (Add to your component) */
+.login-submit-btn.loading {
+  position: relative;
+  color: transparent;
+}
+
+.login-submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
